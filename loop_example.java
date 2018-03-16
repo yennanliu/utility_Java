@@ -1,4 +1,4 @@
-public class loop_eaample {
+public class loop_example {
 
    public static void main(String args[]) {
       int [] numbers = {10, 20, 30, 40, 50,60};
