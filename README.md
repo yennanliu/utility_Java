@@ -35,6 +35,16 @@ $ sqlite3 test.db 'select * from company;'
 ### Reference 
 
 - http://www.runoob.com/sqlite/sqlite-java.html
+- https://github.com/OSE-Lab/learning-spark/tree/master/examples-java
+
+### Packages
+
+- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
+
+
+
+
+
 
 
 
