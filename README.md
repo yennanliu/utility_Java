@@ -47,13 +47,13 @@ mysql> select * from testData;
 Empty set (0.00 sec)
 
 #### set up spark ####
-# please make sure you've downloaded spark core library via https://spark.apache.org/downloads.html and save that  at : /Users/$$USER/spark/
+# please make sure you've downloaded spark core library via https://spark.apache.org/downloads.html and save that  at : /Users/$USER/spark/
 # please download Mysql JDBC jar and put it to the "classpath" location via https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
 # compile 
 $ javac -classpath  ".:/Users/$USER/spark/jars/*"  Spark_Mysql_demo.java 
 # run java application  
 $ java -classpath  ".:/Users/$USER/spark/jars/*"  Spark_Mysql_demo
-# query mysel check the output 
+# back to mysql and query the output 
 mysql> select * from testData;
 +------+-------+
 | name | value |
