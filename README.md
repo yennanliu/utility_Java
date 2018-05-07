@@ -35,7 +35,7 @@ $ sqlite3 test.db 'select * from company;'
 ```bash
 # --- work with spark --- 
 #### set up mysql ####
-$ mysql.server start  (mysql should start at local://127.0.0.1 default )
+$ mysql.server start  (mysql server should start at local://127.0.0.1 default )
 # access local mysql
 $ mysql -u root 
 # select DB
@@ -47,11 +47,12 @@ mysql> select * from testData;
 Empty set (0.00 sec)
 
 #### set up spark ####
-# please download Mysql JDBC jar and put it to the "classpath" location  via  https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
+# please make sure you've downloaded spark core library via https://spark.apache.org/downloads.html and save that  at : /Users/$$USER/spark/
+# please download Mysql JDBC jar and put it to the "classpath" location via https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
 # compile 
-$ javac -classpath  ".:/Users/yennanliu/spark/jars/*"  Spark_Mysql_demo.java 
+$ javac -classpath  ".:/Users/$USER/spark/jars/*"  Spark_Mysql_demo.java 
 # run java application  
-$ java -classpath  ".:/Users/yennanliu/spark/jars/*"  Spark_Mysql_demo
+$ java -classpath  ".:/Users/$USER/spark/jars/*"  Spark_Mysql_demo
 # query mysel check the output 
 mysql> select * from testData;
 +------+-------+
