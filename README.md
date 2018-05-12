@@ -31,6 +31,22 @@ $ sqlite3 test.db 'select * from company;'
 
 ```
 
+```bash
+# --- work with package ---
+# please check the file structure is as below
+#├── package_animals
+#   ├── Animal.java
+#   └── MammalInt.java
+# compile 
+$ javac package_animals/MammalInt.java
+$ javac package_animals/Animal.java
+# run java application under package : package_animals
+$ java package_animals/MammalInt
+# output 
+# Mammal eats
+# Mammal travels
+```
+
 
 ```bash
 # --- work with spark --- 
