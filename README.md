@@ -11,8 +11,9 @@
 $ javac HelloWorld.java
 # run java application  
 $ java HelloWorld
+```
 
-
+```bash
 # --- work with DB ---
 # please download SQLiteJDBC and save as current route :
 # https://bitbucket.org/xerial/sqlite-jdbc/downloads/ 
