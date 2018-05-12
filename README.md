@@ -52,7 +52,7 @@ $ java package_animals/MammalInt
 ```bash
 # --- work with spark --- 
 #### set up mysql ####
-$ mysql.server start  (mysql server should start at local://127.0.0.1 default )
+$ mysql.server start  (mysql server should start locally at mysql://127.0.0.1 default )
 # access local mysql
 $ mysql -u root 
 # select DB
