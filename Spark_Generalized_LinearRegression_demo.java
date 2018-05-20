@@ -50,7 +50,7 @@ public class Spark_Generalized_LinearRegression_demo {
   public static void main(String[] args) {
     SparkSession spark = SparkSession
       .builder()
-      .appName("JavaGeneralizedLinearRegressionExample")
+      .appName("Spark_Generalized_LinearRegression_demo")
       /* set up local spark job runner config https://stackoverflow.com/questions/38008330/spark-error-a-master-url-must-be-set-in-your-configuration-when-submitting-a */
       .config("spark.master", "local")
       .getOrCreate();
