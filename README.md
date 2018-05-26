@@ -85,6 +85,48 @@ mysql>
 ```
 
 
+
+```bash
+# --- work with spark  ML --- 
+
+# compile 
+$ javac -classpath  ".:/Users/$USER/spark/jars/*" Spark_LinearRegression_ElasticNet_Demo.java 
+# run java application  
+$ java -classpath  ".:/Users/$USER/spark/jars/*"  Spark_LinearRegression_ElasticNet_Demo
+# output
+2018-05-26 07:38:16 INFO  DAGScheduler:54 - Job 6 finished: show at Spark_LinearRegression_ElasticNet_Demo.java:69, took 0.067516 s
++--------------------+
+|           residuals|
++--------------------+
+|  -9.889232683103197|
+|  0.5533794340053554|
+|  -5.204019455758823|
+| -20.566686715507508|
+|    -9.4497405180564|
+|  -6.909112502719486|
+|  -10.00431602969873|
+|   2.062397807050484|
+|  3.1117508432954772|
+| -15.893608229419382|
+|  -5.036284254673026|
+|   6.483215876994333|
+|  12.429497299109002|
+|  -20.32003219007654|
+| -2.0049838218725005|
+| -17.867901734183793|
+|   7.646455887420495|
+| -2.2653482182417406|
+|-0.10308920436195645|
+|  -1.380034070385301|
++--------------------+
+only showing top 20 rows
+
+RMSE: 10.189077167598475
+r2: 0.022861466913958184
+
+```
+
+
 ### Reference 
 
 - http://www.runoob.com/sqlite/sqlite-java.html
