@@ -15,6 +15,16 @@
  * limitations under the License.
  */
 
+/*
+
+credit : 
+
+https://github.com/apache/spark/blob/master/examples/src/main/java/org/apache/spark/examples/ml/JavaOneVsRestExample.java
+
+
+*/
+
+
 // package org.apache.spark.examples.ml;
 
 // $example on$
