@@ -133,6 +133,8 @@ r2: 0.022861466913958184
 - https://github.com/OSE-Lab/learning-spark/tree/master/examples-java
 - https://stackoverflow.com/questions/22252534/how-to-run-a-spark-java-program-from-command-line
 - https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
+- https://github.com/databricks/learning-spark/tree/master/src/main/java/com/oreilly/learningsparkexamples/java
+- https://github.com/endymecy/spark-ml-source-analysis
 
 ### Packages
 
