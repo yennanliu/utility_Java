@@ -16,6 +16,14 @@
  * limitations under the License.
  */
 
+
+/*
+
+credit 
+https://github.com/apache/spark/blob/v2.3.1/examples/src/main/java/org/apache/spark/examples/streaming/JavaQueueStream.java
+
+*/
+
 // package org.apache.spark.examples.streaming;
 
 import java.util.ArrayList;
