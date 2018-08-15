@@ -17,6 +17,13 @@
 
 //package org.apache.spark.examples.ml;
 
+/*
+
+credit 
+https://github.com/apache/spark/blob/master/examples/src/main/java/org/apache/spark/examples/ml/JavaALSExample.java
+
+*/
+
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
