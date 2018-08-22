@@ -1,5 +1,6 @@
 // package nl.craftsmen.spark.iris;
 
+import org.apache.spark.mllib.tree.RandomForest;
 import org.apache.spark.ml.classification.RandomForestClassificationModel;
 import org.apache.spark.ml.classification.RandomForestClassifier;
 import org.apache.spark.ml.evaluation.MulticlassClassificationEvaluator;
@@ -63,11 +64,23 @@ public class Spark_randomforest_iris {
         Dataset<Row> testSet = trainingAndTestSet[1];
 
         trainingSet.show();
+        // ----------------  add some parameter for RF model ---------------- 
+        // https://dzone.com/articles/classification-using-random-forest-with-spark-20 
+        //HashMap<Integer, Integer> categoricalFeaturesInfo = new HashMap<>(); // Empty categoricalFeaturesInfo indicates all features are continuous.
+        Integer numTrees = 10; // Deafult is 5 but it is better practice to have more trees. If >1 then it is considered as a forest.
+        String featureSubsetStrategy = "auto"; // Let the algorithm choose the best feature subset strategy.
+        String impurity = "gini"; // For information gain
+        Integer maxDepth = 20; //Maximum depth of the tree
+        //Integer maxBins = 40; // Number of maximum beans to be used
+        //Integer seed = 12345L; // Random seed
+        // ----------------  add some parameter for RF model ---------------- 
 
         // train the algorithm based on a Random Forest Classification Algorithm with default values
+        //RandomForestClassifier randomForestClassifier = new RandomForestClassifier().setSeed(seed);
+        //RandomForestClassificationModel model = RandomForest.trainClassifier(trainingSet,numTrees,featureSubsetStrategy,impurity,maxDepth); 
         RandomForestClassifier randomForestClassifier = new RandomForestClassifier().setSeed(seed);
-        RandomForestClassificationModel model = randomForestClassifier.fit(trainingSet);
-
+        RandomForestClassificationModel model = randomForestClassifier.fit(trainingSet); 
+        
         // test the model against the testset and show results
         Dataset<Row> predictions = model.transform(testSet);
         System.out.println("----------------- prediction ----------------- ");
