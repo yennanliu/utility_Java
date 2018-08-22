@@ -140,7 +140,8 @@ r2: 0.022861466913958184
 
 - https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
 
-
+### Spark Java Tutorial 
+- https://github.com/jleetutorial/sparkTutorial
 
 
 
