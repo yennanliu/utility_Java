@@ -1,6 +1,14 @@
 
 // Java program to demonstrate 
 // clear() method 
+
+
+/*
+
+credit
+https://www.geeksforgeeks.org/java-concurrenthashmap-clear/
+
+*/
   
 import java.util.concurrent.ConcurrentHashMap; 
 import java.util.*; 
@@ -22,7 +30,7 @@ public class ConcurrentHashMapExample {
         my_cmmap.put("5", "1"); 
         my_cmmap.put("6", "1"); 
         my_cmmap.put("xxx", "yyy"); 
-  
+
         // Print the ConcurrentHashMap 
         System.out.println("Map before use of clear(): \n"
                            + my_cmmap); 
