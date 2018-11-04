@@ -48,7 +48,40 @@ public class Hash_Map_Demo {
         System.out.println("Initial Mappings are: " + hash_map2); 
   
         // Using entrySet() to get the set view 
-        System.out.println("The set is: " + hash_map2.entrySet());  }
+        System.out.println("The set is: " + hash_map2.entrySet()); 
+
+
+
+
+        // -------------------------------------------------------
+        // https://www.geeksforgeeks.org/hashmap-putall-method-in-java/
+        // hashmap putAll method 
+        System.out.println(" ------------ demo 3 ------------ ");
+        // Creating an empty HashMap 
+        HashMap<String, Integer> hash_map3 = new HashMap<String, Integer>(); 
+  
+        // Mapping int values to string keys 
+        hash_map3.put("Geeks", 10); 
+        hash_map3.put("4", 15); 
+        hash_map3.put("Geeks", 20); 
+        hash_map3.put("Welcomes", 25); 
+        hash_map3.put("You", 30); 
+
+        HashMap<String, Integer> new_hash_map = new HashMap<String, Integer>(); 
+        new_hash_map.putAll(hash_map3); 
+  
+        // Displaying the HashMap 
+        System.out.println("Initial Mappings are: " + hash_map3); 
+        System.out.println("New Mappings are (via putAll): " + new_hash_map); 
+
+  
+        // Using entrySet() to get the set view 
+        System.out.println("The set is: " + hash_map3.entrySet());
+
+
+
+                                                                    }
+
 
     } 
 
