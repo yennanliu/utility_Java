@@ -127,6 +127,43 @@ r2: 0.022861466913958184
 ```
 
 
+### Quick Start (with Maven)
+
+```bash
+# ref 
+# https://www.mkyong.com/maven/how-to-create-a-java-project-with-maven/
+
+# step 1) set up JAVA project via mvn 
+$ mvn archetype:generate -DgroupId=com.yen.javadev -DartifactId=maven-first-java-project -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+# step 2) Code your APP 
+# in this demo : 
+# src/main/java/com/yen/javadev/APP.java
+# src/test/java/com/yen/javadev/APPTest.java
+
+# step 2') UPDATE POM 
+# pom.xml 
+
+# step 3) Maven Build
+$ mvn package
+
+# step 4) package  
+$ mvn clean package
+
+# step 5) run the APP
+
+$ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 123456
+# output 
+# 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+
+$ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
+# output 
+# fd5f56b40a79a385708428e7b32ab996a681080a166a2206e750eb4819186145
+
+
+
+```
+
 ### Reference 
 
 - http://www.runoob.com/sqlite/sqlite-java.html
