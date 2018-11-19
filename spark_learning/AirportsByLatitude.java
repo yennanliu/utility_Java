@@ -20,16 +20,10 @@ public class AirportsByLatitude {
   JavaRDD < String > airports_name_and_latitude = airports_latitude_bigger_40.map(line -> {
     String[] splits = line.split(Utils.COMMA_DELIMITER);
     return StringUtils.join(new String[] {
-     splits[1], splits[6]
-    }, ",");
-
-
-   }
-
-  );
-
+     splits[1], splits[6] }, ",");
+              }
+        );
   airports_name_and_latitude.saveAsTextFile("out/airports_name_and_latitude.text");
 
-
- }
+    }
 }
