@@ -19,6 +19,9 @@ public class AirportsInUsa_by_latitude {
 
         JavaRDD<String> airportsNameAndCityNames = airportsInUsabylatitude.map(line -> {
                     String[] splits = line.split(Utils.COMMA_DELIMITER);
+
+                    System.out.println("OUTPUT :" + StringUtils.join(new String[]{splits[1], splits[2] , splits[6]}, ","));
+
                     return StringUtils.join(new String[]{splits[1], splits[2] , splits[6]}, ",");
                 }
         );
