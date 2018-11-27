@@ -18,7 +18,7 @@ public class Spark_RDD_filter_map_csv_demo {
 
         // --------------------------
         //  textFile 1  
-        JavaRDD<String> uk_postcode = sc.textFile("spark_learning/data/uk-postcode.csv");
+        JavaRDD <String> uk_postcode = sc.textFile("spark_learning/data/uk-postcode.csv");
 
         // --------------------------
         // Get "Postcode" column from RDD 
@@ -47,12 +47,7 @@ public class Spark_RDD_filter_map_csv_demo {
 
         //System.out.println("*** latitude_large:\n" + latitude_large.take(10) );
 
-
-
     }
 }
-
-
-
 
 
