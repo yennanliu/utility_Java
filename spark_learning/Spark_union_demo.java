@@ -37,8 +37,11 @@ public class Spark_union_demo {
 	// define a function 
 	// the func will filter all line start with Group and contains Captain 
 	private static boolean isNotHeader(String line) {
-		return !(line.startsWith("Group") && line.contains("Captain")); 
+	return !(line.startsWith("Group") && line.contains("Captain"));  
 	} 
-
+	// define a function always return everything (for comparision)
+	private static boolean returnEverything(String line) {
+		return  true; 
+	} 
 }
 
