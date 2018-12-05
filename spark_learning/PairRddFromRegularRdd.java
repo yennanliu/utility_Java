@@ -10,12 +10,14 @@ import scala.Tuple2;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 
 public class PairRddFromRegularRdd {
 
     public static void main(String[] args) throws Exception {
 
+        // mute 3rd party log 
         Logger.getLogger("org").setLevel(Level.ERROR);
 
         SparkConf conf = new SparkConf().setAppName("create").setMaster("local[1]");
@@ -28,10 +30,13 @@ public class PairRddFromRegularRdd {
 
         JavaPairRDD<String, Integer> pairRDD = regularRDDs.mapToPair(getPairFunction());
 
+        // print original RDD 
         System.out.println("*** regularRDDs (RDD of inputStrings ):\n" + regularRDDs.collect() );
 
+        // print PairRDD 
         System.out.println("*** pairRDD (pairRDD of regularRDDs ):\n" + pairRDD.collect() );
 
+        // save to /out 
         pairRDD.coalesce(1).saveAsTextFile("out/pair_rdd_from_regular_rdd");
     }
 
