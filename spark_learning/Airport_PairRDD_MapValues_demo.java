@@ -12,7 +12,7 @@ import scala.Tuple2;
 
 
 
-public class AirportsUppercasedemo {
+public class Airport_PairRDD_MapValues_demo {
 
     public static void main(String[] args) throws Exception {
 
