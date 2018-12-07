@@ -25,12 +25,17 @@ public class AirportsNotInUsa_pairRDD_filter {
 
         JavaPairRDD<String, String> airportPairRDD = airportsRDD.mapToPair(getAirportNameAndCountryNamePair());
 
+        JavaPairRDD<String, String> airportID_airportLat_PairRDD = airportsRDD.mapToPair(getAirportIDAndLat());
+
+
         JavaPairRDD<String, String> airportsNotInUSA = airportPairRDD.filter(keyValue -> !keyValue._2().equals("\"United States\""));
 
 
         System.out.println("*** airportPairRDD :\n" + airportPairRDD.take(30) );
 
         System.out.println("*** airportsNotInUSA :\n" + airportsNotInUSA.take(30) );
+
+        System.out.println("*** airportID_airportLat_PairRDD :\n" + airportID_airportLat_PairRDD.take(30) );
 
 
         //airportsNotInUSA.saveAsTextFile("out/airports_not_in_usa_pair_rdd.text");
@@ -56,6 +61,12 @@ public class AirportsNotInUsa_pairRDD_filter {
     private static PairFunction<String, String, String> getAirportNameAndCountryNamePair() {
         return (PairFunction<String, String, String>) line -> new Tuple2<>(line.split(Utils.COMMA_DELIMITER)[1],
                                                                            line.split(Utils.COMMA_DELIMITER)[3]);
+    }
+
+
+    private static PairFunction<String, String, String> getAirportIDAndLat() {
+        return (PairFunction<String, String, String>) line -> new Tuple2<>(line.split(Utils.COMMA_DELIMITER)[0],
+                                                                           line.split(Utils.COMMA_DELIMITER)[6]);
     }
 
 
