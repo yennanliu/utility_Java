@@ -29,11 +29,15 @@ public class Uber_pairRDD_filter_latlon {
 
         JavaPairRDD<String, Float> uberfilterTimeLonPairRDD = uberTimeLonPairRDD.filter(keyValue -> keyValue._2() > -74);
 
+        JavaPairRDD<String, Float> uberfilterTimeLonPairRDD2 = uberTimeLonPairRDD.filter(keyValue -> (keyValue._2() > -73.80) & (keyValue._2() < -73.69999999));
+
         //JavaPairRDD<String, Float> uberfilterTimeLonPairRDD = uberTimeLonPairRDD.filter(keyValue -> keyValue._2().getValue() > -74);
 
         System.out.println("*** uberTimeLonPairRDD :\n" + uberTimeLonPairRDD.take(30) );
 
         System.out.println("*** uberfilterTimeLonPairRDD :\n" + uberfilterTimeLonPairRDD.take(30) );
+
+        System.out.println("*** uberfilterTimeLonPairRDD2 :\n" + uberfilterTimeLonPairRDD2.take(30) );
 
 
     }
