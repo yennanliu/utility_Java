@@ -20,6 +20,8 @@ public class GroupByKeyVsReduceByKey_demo {
         List<String> words = Arrays.asList("one", "two", "two", "three", "three", "three");
         JavaPairRDD<String, Integer> wordsPairRdd = sc.parallelize(words).mapToPair(word -> new Tuple2<>(word, 1));
 
+        System.out.println("wordsPairRdd: " + wordsPairRdd.collect());
+
         List<Tuple2<String, Integer>> wordCountsWithReduceByKey = wordsPairRdd.reduceByKey((x, y) -> x + y).collect();
         System.out.println("wordCountsWithReduceByKey: " + wordCountsWithReduceByKey);
 
