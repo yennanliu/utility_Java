@@ -38,5 +38,26 @@ public class AverageHousePriceSolution {
         for (Map.Entry<String, Double> housePriceAvgPair : housePriceAvg.collectAsMap().entrySet()) {
             System.out.println(housePriceAvgPair.getKey() + " : " + housePriceAvgPair.getValue());
         }
+
+        System.out.println("lines : \n" + lines.take(10));
+        System.out.println("cleanedLines :\n " + cleanedLines.take(10));
+        System.out.println("housePricePairRdd :\n " + housePricePairRdd.take(10));
+        System.out.println("housePriceTotal :\n " + housePriceTotal.take(10));
+        System.out.println("housePriceAvg :\n " + housePriceAvg.take(10));
+
+
+        // ---------------------------------- dev 
+
+
+        JavaPairRDD<String, AvgCount> houseSizePairRdd = cleanedLines.mapToPair(
+        line -> new Tuple2<>(line.split(",")[3],
+                new AvgCount(1, Double.parseDouble(line.split(",")[5]))));
+
+
+
+
+        System.out.println("houseSizePairRdd :\n " + houseSizePairRdd.take(10));
+        // ---------------------------------- dev 
+
     }
 }
