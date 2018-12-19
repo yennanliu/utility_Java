@@ -48,15 +48,21 @@ public class AverageHousePriceSolution {
 
         // ---------------------------------- dev 
 
-
         JavaPairRDD<String, AvgCount> houseSizePairRdd = cleanedLines.mapToPair(
         line -> new Tuple2<>(line.split(",")[3],
                 new AvgCount(1, Double.parseDouble(line.split(",")[5]))));
 
+        JavaPairRDD<String, AvgCount> houseSizeTotal = houseSizePairRdd.reduceByKey(
+        (x, y) -> new AvgCount(x.getCount() + y.getCount(), x.getTotal() + y.getTotal()));
 
+        JavaPairRDD<String, Double> houseSizeAvg = houseSizeTotal.mapValues(avgCount -> avgCount.getTotal()/avgCount.getCount());
+        System.out.println("housePriceAvg: ");
 
 
         System.out.println("houseSizePairRdd :\n " + houseSizePairRdd.take(10));
+        System.out.println("houseSizeTotal :\n " + houseSizeTotal.take(10));
+        System.out.println("houseSizeAvg :\n " + houseSizeAvg.take(10));
+        
         // ---------------------------------- dev 
 
     }
