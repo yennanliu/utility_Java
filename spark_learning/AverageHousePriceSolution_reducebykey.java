@@ -11,7 +11,7 @@ import java.util.Map;
 // UDF 
 import commons.AvgCount;
 
-public class AverageHousePriceSolution {
+public class AverageHousePriceSolution_reducebykey {
 
     public static void main(String[] args) throws Exception {
         Logger.getLogger("org").setLevel(Level.ERROR);
