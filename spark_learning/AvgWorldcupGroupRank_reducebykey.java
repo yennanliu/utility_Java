@@ -34,7 +34,7 @@ public class AvgWorldcupGroupRank_reducebykey {
         }
 
         JavaPairRDD<String, Double> grouprankPairAvg = grouprankPairTotal.mapValues(avgCount -> avgCount.getTotal()/avgCount.getCount());
-        System.out.println("housePriceAvg: ");
+        System.out.println("groupRankAvg: ");
         for (Map.Entry<String, Double> grouprankPairAvgPair : grouprankPairAvg.collectAsMap().entrySet()) {
             System.out.println(grouprankPairAvgPair.getKey() + " : " + grouprankPairAvgPair.getValue());
         }
