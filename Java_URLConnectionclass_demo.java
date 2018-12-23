@@ -3,7 +3,7 @@
 // ref 
 // https://www.geeksforgeeks.org/reading-url-using-urlconnection-class/
 
- 
+
 import java.io.*; 
 import java.net.*; 
 import java.util.ArrayList; 
@@ -18,7 +18,7 @@ public class Java_URLConnectionclass_demo
     { 
         try
         { 
-            URL url = new URL("https://www.geeksforgeeks.org/java"); 
+            URL url = new URL("https://jsonplaceholder.typicode.com/posts"); 
               
             //open the connection to the above URL. 
             URLConnection urlcon = url.openConnection(); 
