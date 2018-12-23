@@ -27,8 +27,9 @@ public class Spark_SQL_join_demo {
 
         // ----------------------- SPARK SQL JOIN OP  ----------------------- // 
         // join table "Postcode" with table "makterSpace" ONLY via "startsWith" method 
-        // i.e. "AB11" join on  AB11 in "AB11 5BN"
-        // and this is why there is .withColumn("PostCode", concat_ws("", col("PostCode"), lit(" "))); op above 
+        // i.e. "AB11" join on  AB11 out of "AB11 5BN"
+        // and this is why there is .withColumn("PostCode", concat_ws("", col("PostCode"), lit(" "))); op above
+        // e.g. |    AB1|  ->  |    AB1 |   
         Dataset<Row> joined = makerSpace.join(postCode,
                 makerSpace.col("Postcode").startsWith(postCode.col("Postcode")), "left_outer");
 
