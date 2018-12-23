@@ -19,10 +19,10 @@ public class Spark_accumulator_demo {
         JavaSparkContext javaSparkContext = new JavaSparkContext(sparkContext);
 
         final LongAccumulator total = new LongAccumulator();
-        final LongAccumulator missingSalaryMidPoint = new LongAccumulator();
+        final LongAccumulator missingCountryMidPoint = new LongAccumulator();
 
         total.register(sparkContext, Option.apply("total"), false);
-        missingSalaryMidPoint.register(sparkContext, Option.apply("missing salary middle point"), false);
+        missingCountryMidPoint.register(sparkContext, Option.apply("missing salary middle point"), false);
 
         JavaRDD<String> responseRDD = javaSparkContext.textFile("data/worldcupplayerinfo_20140701_1.tsv");
 
@@ -31,17 +31,31 @@ public class Spark_accumulator_demo {
 
             total.add(1);
 
-            if (splits[3].isEmpty()) {
-                missingSalaryMidPoint.add(1);
+            if (splits[1].isEmpty()) {
+                missingCountryMidPoint.add(1);
             }
 
             return splits[1].equals("Brazil");
 
         });
 
+        JavaRDD<String> responseFromCroatia = responseRDD.filter(response -> {
+            String[] splits = response.split("\t");
+
+            total.add(1);
+
+            if (splits[1].isEmpty()) {
+            missingCountryMidPoint.add(1);
+            }
+
+            return splits[1].equals("Croatia");
+
+        });
+
         System.out.println("responseRDD: " + responseRDD.take(30));
         System.out.println("Count of players from Brazil: " + responseFromBrail.count());
+        System.out.println("Count of players from responseFromCroatia: " + responseFromCroatia.count());
         System.out.println("Total count of responses: " + total.value());
-        System.out.println("Count of responses missing salary middle point: " + missingSalaryMidPoint.value());
+        System.out.println("Count of responses missing salary country point: " + missingCountryMidPoint.value());
     }
 }
