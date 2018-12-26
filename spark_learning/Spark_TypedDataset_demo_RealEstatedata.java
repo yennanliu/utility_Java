@@ -51,8 +51,8 @@ public class Spark_TypedDataset_demo_RealEstatedata {
         typedDataset.groupBy(typedDataset.col("location")).count().show();
 
         System.out.println("=== Print responses with price less than 150000 ===");
-        typedDataset.filter((FilterFunction<Response2>)response -> response.getprce() !=null &&
-                                                                  response.getprce() < 150000)
+        typedDataset.filter((FilterFunction<Response2>)response -> response.getprice() !=null &&
+                                                                  response.getprice() < 150000)
                     .show();
 
         System.out.println("=== Print the result by price in descending order ===");
@@ -63,15 +63,16 @@ public class Spark_TypedDataset_demo_RealEstatedata {
                     .groupBy("location")
                     .agg(avg(PRICE), max(PRICE))
                     .show();
-        /*
-        System.out.println("=== Group by salary bucket ===");
-        typedDataset.map((MapFunction<Response, Integer>) response -> response.getprce() == null ?
+        
+        System.out.println("=== Group by RealEstate bucket ===");
+        typedDataset.map((MapFunction<Response2, Integer>) response -> response.getprice() == null ?
                                                                       null :
-                                                                      Math.round(response.getprce()/20000) * 20000, Encoders.INT())
-                    .withColumnRenamed("value", PRICE)
-                    .groupBy(SALARY_MIDPOINT_BUCKET)
+                                                                      Math.round(response.getprice()/20000) * 20000, Encoders.INT())
+                    .withColumnRenamed("value", REALESTATE_MIDPOINT_BUCKET)
+                    .groupBy(REALESTATE_MIDPOINT_BUCKET)
                     .count()
-                    .orderBy(SALARY_MIDPOINT_BUCKET).show();
-        */
+                    .orderBy(REALESTATE_MIDPOINT_BUCKET).show();
+
+        
     }
 }
