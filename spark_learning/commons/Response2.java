@@ -25,7 +25,7 @@ public class Response2 implements Serializable {
         this.location = location;
     }
 
-    public Float getprce() {
+    public Float getprice() {
         return price;
     }
 
