@@ -44,36 +44,34 @@ public class Spark_TypedDataset_demo_RealEstatedata {
         System.out.println("=== Print 20 records of responses table ===");
         typedDataset.show(20);
 
-        /*
-
         System.out.println("=== Print the responses from Afghanistan ===");
-        typedDataset.filter((FilterFunction<Response>) response -> response.getCountry().equals("Afghanistan")).show();
+        typedDataset.filter((FilterFunction<Response2>) response -> response.getLocation().equals("Santa Maria-Orcutt")).show();
 
-        System.out.println("=== Print the count of occupations ===");
-        typedDataset.groupBy(typedDataset.col("occupation")).count().show();
+        System.out.println("=== Print the count of country ===");
+        typedDataset.groupBy(typedDataset.col("location")).count().show();
 
-        System.out.println("=== Print responses with average mid age less than 20 ===");
-        typedDataset.filter((FilterFunction<Response>)response -> response.getAgeMidPoint() !=null &&
-                                                                  response.getAgeMidPoint() < 20)
+        System.out.println("=== Print responses with price less than 150000 ===");
+        typedDataset.filter((FilterFunction<Response2>)response -> response.getprce() !=null &&
+                                                                  response.getprce() < 150000)
                     .show();
 
-        System.out.println("=== Print the result by salary middle point in descending order ===");
-        typedDataset.orderBy(typedDataset.col(SALARY_MIDPOINT ).desc()).show();
+        System.out.println("=== Print the result by price in descending order ===");
+        typedDataset.orderBy(typedDataset.col(PRICE).desc()).show();
 
-        System.out.println("=== Group by country and aggregate by average salary middle point and max age middle point ===");
-        typedDataset.filter((FilterFunction<Response>) response -> response.getSalaryMidPoint() != null)
-                    .groupBy("country")
-                    .agg(avg(SALARY_MIDPOINT), max(AGE_MIDPOINT))
+        System.out.println("=== Group by location and aggregate by average price middle point and max age middle point ===");
+        typedDataset.filter((FilterFunction<Response2>) response -> response.getLocation() != null)
+                    .groupBy("location")
+                    .agg(avg(PRICE), max(PRICE))
                     .show();
-
+        /*
         System.out.println("=== Group by salary bucket ===");
-        typedDataset.map((MapFunction<Response, Integer>) response -> response.getSalaryMidPoint() == null ?
+        typedDataset.map((MapFunction<Response, Integer>) response -> response.getprce() == null ?
                                                                       null :
-                                                                      Math.round(response.getSalaryMidPoint()/20000) * 20000, Encoders.INT())
-                    .withColumnRenamed("value", SALARY_MIDPOINT_BUCKET)
+                                                                      Math.round(response.getprce()/20000) * 20000, Encoders.INT())
+                    .withColumnRenamed("value", PRICE)
                     .groupBy(SALARY_MIDPOINT_BUCKET)
                     .count()
                     .orderBy(SALARY_MIDPOINT_BUCKET).show();
-    */
+        */
     }
 }
