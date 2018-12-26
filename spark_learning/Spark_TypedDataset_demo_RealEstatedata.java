@@ -1,5 +1,5 @@
 // UDF 
-import commons.Response;
+import commons.Response2;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -32,14 +32,10 @@ public class Spark_TypedDataset_demo_RealEstatedata {
                 col("Size").as("size").cast("float"),
                 col("Status").as("status"));
 
+        Dataset<Response2> typedDataset = responseWithSelectedColumns.as(Encoders.bean(Response2.class));
 
-
-        System.out.println("=== Print 20 records of responses RDD  ===");
+        System.out.println("=== Print 20 records of responses  ===");
         responseWithSelectedColumns.show(20);
-
-        /*
-        System.out.println("=== Print out first  ===");
-        typedDataset.printSchema();
 
 
         System.out.println("=== Print out schema ===");
@@ -47,7 +43,7 @@ public class Spark_TypedDataset_demo_RealEstatedata {
 
         System.out.println("=== Print 20 records of responses table ===");
         typedDataset.show(20);
-        */
+
         /*
 
         System.out.println("=== Print the responses from Afghanistan ===");
