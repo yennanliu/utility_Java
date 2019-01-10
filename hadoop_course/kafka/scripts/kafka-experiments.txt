@@ -1,0 +1,27 @@
+## Create & Describe Topic ##
+
+bin/kafka-topics --create --zookeeper localhost:2181 --partitions 1 --replication-factor 3 --topic hirw-console-topic
+
+bin/kafka-topics --describe --zookeeper localhost:2181 --topic hirw-console-topic
+
+## Start Producer & Consumer ##
+
+bin/kafka-console-producer --broker-list ip-172-31-37-234.ec2.internal:9092,ip-172-31-42-160.ec2.internal:9092,ip-172-31-45-199.ec2.internal:9092 --topic hirw-console-topic
+
+bin/kafka-console-consumer --bootstrap-server ip-172-31-37-234.ec2.internal:9092,ip-172-31-42-160.ec2.internal:9092,ip-172-31-45-199.ec2.internal:9092 --topic hirw-console-topic
+
+bin/kafka-console-consumer --bootstrap-server ip-172-31-37-234.ec2.internal:9092,ip-172-31-42-160.ec2.internal:9092,ip-172-31-45-199.ec2.internal:9092 --topic hirw-console-topic --from-beginning
+
+## Consumer Group ##
+
+bin/kafka-console-consumer --bootstrap-server ip-172-31-37-234.ec2.internal:9092,ip-172-31-42-160.ec2.internal:9092,ip-172-31-45-199.ec2.internal:9092 --topic hirw-console-topic --from-beginning --consumer-property group.id=console-consumer-group
+
+## Increase Partitions ##
+
+bin/kafka-topics --alter --zookeeper localhost:2181 --topic hirw-console-topic --partitions 3
+
+bin/kafka-topics --describe --zookeeper localhost:2181 --topic hirw-console-topic
+
+## Check parition assignment & Offsets ##
+
+bin/kafka-run-class kafka.admin.ConsumerGroupCommand --bootstrap-server ip-172-31-37-234.ec2.internal:9092,ip-172-31-42-160.ec2.internal:9092,ip-172-31-45-199.ec2.internal:9092 --describe --group console-consumer-group

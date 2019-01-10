@@ -1,0 +1,109 @@
+package com.hirw.kafka;
+
+import org.apache.avro.generic.GenericRecord;
+import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.apache.kafka.common.errors.WakeupException;
+import com.google.gson.GsonBuilder;
+import com.google.gson.internal.LinkedTreeMap;
+
+import io.confluent.kafka.serializers.KafkaAvroDeserializer;
+
+import java.math.BigDecimal;
+import java.util.Collections;
+import java.util.Properties;
+
+/**
+ * 
+ * @author HIRW (www.hadoopinrealworld.com)
+ * Kafka Consumer to fetch RSVP messages from Kafka
+ *
+ */
+
+public class KafkaMeetupConsoleConsumer {
+
+	private final static String TOPIC = "hirw-meetup-topic";
+	private final static String BOOTSTRAP_SERVERS = "ip-172-31-37-234.ec2.internal:9092,"
+			+ "ip-172-31-42-160.ec2.internal:9092,ip-172-31-45-199.ec2.internal:9092";
+
+	private static Consumer<Integer, GenericRecord> createConsumer() {
+		final Properties props = new Properties();
+		props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
+		props.put(ConsumerConfig.GROUP_ID_CONFIG, "HIRWKafkaMeetupConsumerGroup");
+		props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class);
+		props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, KafkaAvroDeserializer.class);
+		props.put("schema.registry.url", "http://localhost:8081");
+		
+		// Create the consumer using props.
+		final Consumer<Integer, GenericRecord> consumer = new KafkaConsumer<>(props);
+
+		// Subscribe to the topic.
+		consumer.subscribe(Collections.singletonList(TOPIC));
+		return consumer;
+	}
+	
+	static void runConsumer() throws InterruptedException {
+
+		final Consumer<Integer, GenericRecord> consumer = createConsumer();
+		try {
+
+			while (true) {
+				//Poll with a max value to wait longer for message availability in the topic
+				final ConsumerRecords<Integer, GenericRecord> consumerRecords = consumer.poll(Long.MAX_VALUE);
+
+				//For each record, get event, member and group information from the RSVP
+				consumerRecords.forEach(record -> {
+					
+					GenericRecord r = record.value();
+					String json = r.get("rsvp").toString();
+					
+					System.out.printf("Consumer Record:(%d, %s, %d, %d)\n", record.key(), parseRSVP(json),
+							record.partition(), record.offset());
+				});
+
+				//consumer.commitSync();
+				//consumer.commitAsync();
+			}
+		} catch (WakeupException e) {
+			// ignore for shutdown
+		} finally {
+			consumer.close();
+		}
+	}
+	
+	/*
+	 * Utility function to parse the JSON object and fetch the needed information from RSVP
+	 */
+	
+	@SuppressWarnings("rawtypes")
+	private static String parseRSVP(String rsvp) {
+		GsonBuilder builder = new GsonBuilder();
+		Object o = builder.create().fromJson(rsvp, Object.class);
+		
+		LinkedTreeMap member = (LinkedTreeMap) ((LinkedTreeMap)o).get("member");
+		LinkedTreeMap group = (LinkedTreeMap) ((LinkedTreeMap)o).get("group");
+		LinkedTreeMap event = (LinkedTreeMap) ((LinkedTreeMap)o).get("event");
+		
+		StringBuilder sb = new StringBuilder();
+		
+		sb.append(new BigDecimal(((LinkedTreeMap)o).get("rsvp_id").toString()).intValue()).append(",");
+		sb.append(new BigDecimal(group.get("group_id").toString()).intValue()).append(",");
+		sb.append(group.get("group_name")).append(",");
+		sb.append(group.get("group_city")).append(",");
+		sb.append(group.get("group_country")).append(",");
+		sb.append(new BigDecimal(member.get("member_id").toString()).intValue()).append(",");
+		sb.append(member.get("member_name")).append(",");
+		sb.append(event.get("event_id")).append(",");
+		sb.append(event.get("event_name"));
+		
+		return sb.toString();
+	}
+
+
+	public static void main(String[] args) throws Exception {
+		runConsumer();
+	}
+
+}

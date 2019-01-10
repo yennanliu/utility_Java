@@ -1,0 +1,38 @@
+## ZOOKEEPER SETUP ##
+
+--Download Zookeeper
+wget http://apache.claz.org/zookeeper/stable/zookeeper-3.4.10.tar.gz
+
+--untar
+tar -xzf zookeeper-3.4.10.tar.gz
+
+
+--Configure zoo.cfg
+vi /home/ubuntu/zookeeper-3.4.10/conf
+
+--Create Zookeeper directory
+sudo mkdir /var/zookeeper
+sudo chown ubuntu:ubuntu /var/zookeeper
+
+--Create myid
+vi /var/zookeeper/myid
+
+
+--Start Zookeeper
+bin/zkServer.sh start
+
+
+## KAFKA SETUP ##
+
+--untar
+tar -xzf confluent-oss-3.3.0-2.11.tar.gz
+
+--Configuration
+vi /home/ubuntu/confluent-3.3.0/etc/kafka/server.properties
+vi /home/ubuntu/confluent-3.3.0/etc/kafka/zookeeper.properties
+
+--Start Kafka
+nohup bin/kafka-server-start etc/kafka/server.properties > /dev/null 2>&1 &
+
+--Stop Kafka
+bin/kafka-server-stop

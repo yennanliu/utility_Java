@@ -1,0 +1,39 @@
+--Create Topic
+
+bin/kafka-topics --create --zookeeper localhost:2181 --replication-factor 3 --partitions 3 --topic hirw-meetup-topic
+
+--Start producer
+
+java -cp KafkaMeetup-1.0.jar:/home/ubuntu/confluent-3.3.0/share/java/kafka/*:/home/ubuntu/confluent-3.3.0/share/java/confluent-common/*:/home/ubuntu/confluent-3.3.0/share/java/schema-registry/*:/home/ubuntu/meetup_libs/* com.hirw.kafka.KafkaMeetupProducerAvro
+
+--Start consumer
+
+java -cp KafkaMeetup-1.0.jar:/home/ubuntu/confluent-3.3.0/share/java/kafka/*:/home/ubuntu/confluent-3.3.0/share/java/confluent-common/*:/home/ubuntu/confluent-3.3.0/share/java/schema-registry/*:/home/ubuntu/meetup_libs/* com.hirw.kafka.KafkaMeetupConsoleConsumer
+
+--Describe parition
+
+bin/kafka-topics --describe --zookeeper localhost:2181 --topic hirw-meetup-topic
+
+--Start Kafka connect
+
+bin/connect-standalone etc/schema-registry/connect-avro-standalone.properties etc/kafka-connect-hdfs/meetup-hdfs.properties
+
+--Hive against RSVP data
+
+SET hive.mapred.supports.subdirectories=TRUE;
+SET mapred.input.dir.recursive=TRUE;
+
+CREATE EXTERNAL TABLE meetup_avro
+ROW FORMAT
+SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS
+INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/user/ubuntu/topics/hirw-meetup-topic'
+TBLPROPERTIES ('avro.schema.url'='hdfs:///user/ubuntu/meetup.avsc');
+
+select count(1) from meetup_avro;
+
+select get_json_object(rsvp, '$.group.group_name') as group_name, count(1) from meetup_avro
+group by get_json_object(rsvp, '$.group.group_name');
+
