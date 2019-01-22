@@ -76,6 +76,10 @@ cd /usr/local/etc/kafka && zookeeper-server-start zookeeper.properties
 cd /usr/local/etc/kafka && kafka-server-start server.properties
 
 
+# zoopkeeper log file : /usr/local/var/lib/zookeeper
+# kafka log file : /usr/local/var/lib/kafka-logs
+
+
 
 
 
