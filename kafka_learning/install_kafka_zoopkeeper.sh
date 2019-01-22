@@ -66,7 +66,7 @@ brew install kafka
 
 
 # STEP 3 : TEST 
-
+# sub-step 3-0 : config setting  
 # (modify zoopkeeper config if needed ) : dataDir in zookeeper.properties file 
 # (modify server config if needed ) : server.properties file 
 
@@ -74,7 +74,6 @@ brew install kafka
 cd /usr/local/etc/kafka && zookeeper-server-start zookeeper.properties
 # sub-step 3-2 : open the other terminal and run : 
 cd /usr/local/etc/kafka && kafka-server-start server.properties
-
 
 # zoopkeeper log file : /usr/local/var/lib/zookeeper
 # kafka log file : /usr/local/var/lib/kafka-logs
