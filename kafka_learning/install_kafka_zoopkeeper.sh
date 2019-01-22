@@ -6,8 +6,36 @@
 #################################################################
 
 
+<<COMMENT1
+# MAC OSX INTRO :
+
+Install brew if needed: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+Download and Setup Java 8 JDK:
+
+brew tap caskroom/versions
+brew cask install java8
+Download & Extract the Kafka binaries from https://kafka.apache.org/downloads
+
+Install Kafka commands using brew: brew install kafka
+
+Try Kafka commands using kafka-topics (for example)
+
+Edit Zookeeper & Kafka configs using a text editor
+
+zookeeper.properties: dataDir=/your/path/to/data/zookeeper
+
+server.properties: log.dirs=/your/path/to/data/kafka
+
+Start Zookeeper in one terminal window: zookeeper-server-start config/zookeeper.properties
+
+Start Kafka in another terminal window: kafka-server-start config/server.properties
+COMMENT1
+
 
 <<COMMENT1
+# SAMPLE INSTALL LOG : 
+
 ==> Installing dependencies for kafka: zookeeper
 ==> Installing kafka dependency: zookeeper
 ==> Downloading https://homebrew.bintray.com/bottles/zookeeper-3.4.13.mojave.bottle
