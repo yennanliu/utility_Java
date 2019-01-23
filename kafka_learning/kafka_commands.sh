@@ -24,10 +24,15 @@ kafka-topics  --zookeeper  127.0.0.1:2181 --topic second_topic --create  --parti
 kafka-topics  --zookeeper  127.0.0.1:2181 --list 
 kafka-topics  --zookeeper  127.0.0.1:2181 --topic second_topic --delete   # just mark the topic for deletion 
 
+# 5) set up producer 
+kafka-console-producer  --broker-list  127.0.0.1:9092 --topic first_topic 
+# if start from a new broker not in the list --> still be fine 
+kafka-console-producer  --broker-list  127.0.0.1:9092 --topic new_topic 
 
+# 6) set up producer property 
+kafka-console-producer  --broker-list  127.0.0.1:9092 --topic first_topic --producer-property acks=all  
 
-
-
+# 7) 
 
 
 
