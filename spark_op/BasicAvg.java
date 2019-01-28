@@ -22,6 +22,9 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.Function2;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+
 public final class BasicAvg {
   public static class AvgCount implements Serializable {
     public AvgCount(int total, int num) {
@@ -36,6 +39,7 @@ public final class BasicAvg {
   }
 
   public static void main(String[] args) throws Exception {
+    Logger.getLogger("org").setLevel(Level.ERROR);
     String master;
     if (args.length > 0) {
 	    master = args[0];
@@ -64,7 +68,9 @@ public final class BasicAvg {
     };
     AvgCount initial = new AvgCount(0,0);
     AvgCount result = rdd.aggregate(initial, addAndCount, combine);
+    System.out.println("###########################");
     System.out.println(result.avg());
+    System.out.println("###########################");
     sc.stop();
   }
 }
