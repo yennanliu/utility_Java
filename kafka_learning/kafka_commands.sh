@@ -38,13 +38,14 @@ kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic
 # 8) set up cosumer (read from beginning, i.e. read all msg) (NOW, OPEN THE OTHER TERMIANL AND RUN THE BELOW COMMAND )
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic  --from-beginning 
 
-
 # 9) list the consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --list
 
-
-# 9) describe the consumer groups 
+# 10) describe the consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --describe --group my-first-application
+
+# 11) read data from topic and group application 
+kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic --group my-first-application
 
 
 # TODO  :  Section 6.35 : Kafka Consumers in Group  
