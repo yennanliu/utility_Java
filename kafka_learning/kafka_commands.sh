@@ -16,41 +16,41 @@ kafka-topics  --zookeeper  127.0.0.1:2181 --topic first_topic --create  --partit
 # 3) list the infromation inside topic 
 kafka-topics  --zookeeper  127.0.0.1:2181 --list 
 
-# 3) describe the the topic 
+# 4) describe the the topic 
 kafka-topics  --zookeeper  127.0.0.1:2181 --topic first_topic --describe 
 
-# 4) delete the topic 
+# 5) delete the topic 
 kafka-topics  --zookeeper  127.0.0.1:2181 --topic second_topic --create  --partitions 6 --replication-factor 1
 kafka-topics  --zookeeper  127.0.0.1:2181 --list 
 kafka-topics  --zookeeper  127.0.0.1:2181 --topic second_topic --delete   # just mark the topic for deletion 
 
-# 5) set up producer 
+# 6) set up producer 
 kafka-console-producer  --broker-list  127.0.0.1:9092 --topic first_topic 
 # if start from a new broker not in the list --> still be fine, BUT ALWAYS CREATE A TOPIC BEFORE USING IT 
 kafka-console-producer  --broker-list  127.0.0.1:9092 --topic new_topic 
 
-# 6) set up producer property 
+# 7) set up producer property 
 kafka-console-producer  --broker-list  127.0.0.1:9092 --topic first_topic --producer-property acks=all  
 
-# 7) set up cosumer (read from now, i.e. only read the producer msg when this consumer is set up ) (NOW, OPEN THE OTHER TERMIANL AND RUN THE BELOW COMMAND )
+# 8) set up cosumer (read from now, i.e. only read the producer msg when this consumer is set up ) (NOW, OPEN THE OTHER TERMIANL AND RUN THE BELOW COMMAND )
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic 
 
-# 8) set up cosumer (read from beginning, i.e. read all msg) (NOW, OPEN THE OTHER TERMIANL AND RUN THE BELOW COMMAND )
+# 9) set up cosumer (read from beginning, i.e. read all msg) (NOW, OPEN THE OTHER TERMIANL AND RUN THE BELOW COMMAND )
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic  --from-beginning 
 
-# 9) list the consumer groups 
+# 10) list the consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --list
 
-# 10) describe the consumer groups 
+# 11) describe the consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --describe --group my-first-application
 
-# 11) start a new consumer with topic and group application 
+# 12) start a new consumer with topic and group application 
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic --group my-first-application
 
-# 12) re-set kafka consumer group 
+# 13) re-set kafka consumer group 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092  --group my-first-application --reset-offsets --to-earliest --execute  --topic first_topic
 
-# 13) shift consumer groups 
+# 14) shift consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092  --group my-first-application --reset-offsets --shift-by 2  --execute  --topic first_topic
 
 
