@@ -53,8 +53,11 @@ kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092  --group my-first-app
 # 14) shift consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092  --group my-first-application --reset-offsets --shift-by 2  --execute  --topic first_topic
 
+# 15) show Producer with keys
+kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --property parse.key=true --property key.separator=,
 
-
+# 16) show consumer with keys 
+kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
 
 # TODO  :  Section 6.35 : Kafka Consumers in Group  
 
