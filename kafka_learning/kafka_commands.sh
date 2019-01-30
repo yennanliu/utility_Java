@@ -44,8 +44,16 @@ kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --list
 # 10) describe the consumer groups 
 kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --describe --group my-first-application
 
-# 11) read data from topic and group application 
+# 11) start a new consumer with topic and group application 
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic --group my-first-application
+
+# 12) re-set kafka consumer group 
+kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092  --group my-first-application --reset-offsets --to-earliest --execute  --topic first_topic
+
+# 13) shift consumer groups 
+kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092  --group my-first-application --reset-offsets --shift-by 2  --execute  --topic first_topic
+
+
 
 
 # TODO  :  Section 6.35 : Kafka Consumers in Group  
