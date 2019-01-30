@@ -39,6 +39,12 @@ kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic first_topic  --from-beginning 
 
 
+# 9) list the consumer groups 
+kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --list
+
+
+# 9) describe the consumer groups 
+kafka-consumer-groups   --bootstrap-server  127.0.0.1:9092 --describe --group my-first-application
 
 
 # TODO  :  Section 6.35 : Kafka Consumers in Group  
