@@ -59,7 +59,7 @@ kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --proper
 # 16) show consumer with keys 
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
 
-# TODO  :  Section 6.35 : Kafka Consumers in Group  
+# TODO  :  Section 7.45 : Java producer 
 
 
 
