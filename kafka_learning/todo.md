@@ -1,1 +1,1 @@
-- TODO  :  Section 7.45 : Java producer 
+- TODO  :  Section 7.49 : Java consumer inside consumer group  
