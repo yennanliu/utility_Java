@@ -36,13 +36,13 @@ public class Spark_query_mysql_demo {
 
         // DataFrame jdbcDF = sqlContext.read().format("jdbc"). options(options).load();
         // https://stackoverflow.com/questions/27718382/how-to-work-with-mysql-and-apache-spark
-        
+
         DataFrame dataFrame = sqlContext
             .read()
             .format("jdbc")
             .options("url", "jdbc:mysql://103.29.68.107/PTTData?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true")
-            .options("user", "guest")
-            .options("password", "123")
+            .options("user", <user>)
+            .options("password", <password>)
             .options("dbtable", sql)
             .load();
 
