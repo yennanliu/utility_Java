@@ -5,7 +5,7 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
-public class AirportsInUsa_by_latitude {
+public class Airport_PairRDD_filter_demo {
 
     public static void main(String[] args) throws Exception {
 
@@ -25,6 +25,8 @@ public class AirportsInUsa_by_latitude {
                     return StringUtils.join(new String[]{splits[1], splits[2] , splits[6]}, ",");
                 }
         );
-        airportsNameAndCityNames.saveAsTextFile("out/AirportsInUsa_by_latitude.text");
+        System.out.println("*** output  :\n" + airportsNameAndCityNames.collect() );
+        // uncomment it if wanna export output   
+        //airportsNameAndCityNames.saveAsTextFile("out/AirportsInUsa_by_latitude.text");
     }
 }
