@@ -42,7 +42,7 @@ public class JavaMulticlassLogisticRegressionWithElasticNetExample {
         // Load training data
         Dataset<Row> training = spark.read().format("libsvm")
                 //.load("data/mllib/sample_multiclass_classification_data.txt");
-                .load("../spark/data/mllib/sample_multiclass_classification_data.txt");
+                .load("../../spark/data/mllib/sample_multiclass_classification_data.txt");
 
         LogisticRegression lr = new LogisticRegression()
                 .setMaxIter(10)
