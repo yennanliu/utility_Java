@@ -94,7 +94,9 @@ public class JavaALSExample {
 
     // $example on$
     JavaRDD<Rating> ratingsRDD = spark
-      .read().textFile("../spark/data/mllib/als/sample_movielens_ratings.txt").javaRDD()
+      .read().textFile("../../spark/data/mllib/als/sample_movielens_ratings.txt").javaRDD()
+      // plz fix the data route above in cases 
+      // ‎⁨Macintosh HD⁩ ▸ ⁨Users⁩ ▸ ⁨yennanliu⁩ ▸ ⁨spark⁩ ▸ ⁨data⁩ ▸ ⁨mllib⁩ ▸ ⁨als⁩
       //.load("../spark/data/mllib/sample_libsvm_data.txt");
 
       .map(Rating::parseRating);
