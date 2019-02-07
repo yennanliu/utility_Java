@@ -17,6 +17,13 @@
 
 //package org.apache.spark.examples.ml;
 
+
+
+// ****** TO FIX  ****** //
+
+
+
+
 // $example on$
 import org.apache.spark.SparkConf;
 
