@@ -58,7 +58,7 @@ public class Spark_Generalized_LinearRegression_demo {
     // $example on$
     // Load training data
     Dataset<Row> dataset = spark.read().format("libsvm")
-      .load("../spark/data/mllib/sample_linear_regression_data.txt");
+      .load("../../spark/data/mllib/sample_linear_regression_data.txt");
 
     GeneralizedLinearRegression glr = new GeneralizedLinearRegression()
       .setFamily("gaussian")

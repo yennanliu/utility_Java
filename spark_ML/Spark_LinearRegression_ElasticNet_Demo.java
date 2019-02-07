@@ -48,7 +48,7 @@ public class Spark_LinearRegression_ElasticNet_Demo {
     // $example on$
     // Load training data.
     Dataset<Row> training = spark.read().format("libsvm")
-      .load("../spark/data/mllib/sample_linear_regression_data.txt");
+      .load("../../spark/data/mllib/sample_linear_regression_data.txt");
 
     LinearRegression lr = new LinearRegression()
       .setMaxIter(10)

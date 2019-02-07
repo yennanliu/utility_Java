@@ -50,7 +50,7 @@ public class Spark_DecisionTree_Regression_Demo {
     // Load the data stored in LIBSVM format as a DataFrame.
     Dataset<Row> data = spark.read().format("libsvm")
       //.load("data/mllib/sample_libsvm_data.txt");
-      .load("../spark/data/mllib/sample_libsvm_data.txt");
+      .load("../../spark/data/mllib/sample_libsvm_data.txt");
 
     // Automatically identify categorical features, and index them.
     // Set maxCategories so features with > 4 distinct values are treated as continuous.

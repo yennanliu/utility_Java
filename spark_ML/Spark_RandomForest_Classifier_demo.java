@@ -39,7 +39,7 @@ public class Spark_RandomForest_Classifier_demo {
 
     // $example on$
     // Load and parse the data file, converting it to a DataFrame.
-    Dataset<Row> data = spark.read().format("libsvm").load("../spark/data/mllib/sample_libsvm_data.txt");
+    Dataset<Row> data = spark.read().format("libsvm").load("../../spark/data/mllib/sample_libsvm_data.txt");
 
     // Index labels, adding metadata to the label column.
     // Fit on whole dataset to include all labels in index.

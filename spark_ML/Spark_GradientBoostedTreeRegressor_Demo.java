@@ -41,7 +41,7 @@ public class Spark_GradientBoostedTreeRegressor_Demo {
 
     // $example on$
     // Load and parse the data file, converting it to a DataFrame.
-    Dataset<Row> data = spark.read().format("libsvm").load("../spark/data/mllib/sample_libsvm_data.txt");
+    Dataset<Row> data = spark.read().format("libsvm").load("../../spark/data/mllib/sample_libsvm_data.txt");
 
     // Automatically identify categorical features, and index them.
     // Set maxCategories so features with > 4 distinct values are treated as continuous.
