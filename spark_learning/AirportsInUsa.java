@@ -22,6 +22,7 @@ public class AirportsInUsa {
                     return StringUtils.join(new String[]{splits[1], splits[2]}, ",");
                 }
         );
-        airportsNameAndCityNames.saveAsTextFile("out/airports_in_usa.text");
+        System.out.println(airportsNameAndCityNames.take(30));
+        //airportsNameAndCityNames.saveAsTextFile("out/airports_in_usa.text");
     }
 }
