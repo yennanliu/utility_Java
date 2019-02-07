@@ -14,6 +14,17 @@ import org.apache.spark.streaming.api.java.JavaStreamingContext;
 
 import scala.Tuple2;
 
+/*
+
+*** TO FIX *** 
+
+COMMAND TO RUN :
+
+java -classpath  ".:/Users/$USER/spark/jars/*" Spark_KMeans_demo iris.csv  iris.csv  10 10 3 
+
+
+*/
+
 public class Spark_KMeans_demo  {
 
 	public static void main(String[] args) {
@@ -61,10 +72,13 @@ public class Spark_KMeans_demo  {
 		    model.predictOnValues(testData.mapToPair(new PairFunction<LabeledPoint, Double, Vector>() {
 				public Tuple2<Double, Vector> call(LabeledPoint arg0)
 						throws Exception {
+					System.out.println(" ############  OUTPUT ############ ");
+					//System.out.println(uple2<Double, Vector>(arg0.label(), arg0.features()));
 					return new Tuple2<Double, Vector>(arg0.label(), arg0.features());
 				}
 			})).print();
 		    
+
 		    ssc.start();
 		    //ssc.awaitTermination();
 
