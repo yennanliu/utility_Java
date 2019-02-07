@@ -55,7 +55,8 @@ public class JavaGaussianMixtureExample {
 
     // $example on$
     // Loads data
-    Dataset<Row> dataset = spark.read().format("libsvm").load("../spark/data/mllib/sample_kmeans_data.txt");
+    // Macintosh HD⁩ ▸ ⁨Users⁩ ▸ ⁨yennanliu⁩ ▸ ⁨spark⁩ ▸ ⁨data⁩ ▸ ⁨mllib⁩ ▸ sample_kmeans_data.txt 
+    Dataset<Row> dataset = spark.read().format("libsvm").load("../../spark/data/mllib/sample_kmeans_data.txt");
 
     // Trains a GaussianMixture model
     GaussianMixture gmm = new GaussianMixture()
