@@ -23,7 +23,7 @@ public class Spark_query_mysql_demo {
         
         SQLContext sqlContext = new SQLContext(sc);
 
-        // here you can run sql query
+        // connect to mysql 
         String sql = "(select * from Soft_Job LIMIT 1000) as test_table";
 
         String url = "jdbc:mysql://103.29.68.107:3306/PTTData?user=guest&password=123";
@@ -34,8 +34,14 @@ public class Spark_query_mysql_demo {
                       .option("url", url)
                       .option("dbtable", sql)
                       .load();
-        df.show(30); 
+        // print df 
+        System.out.println("=== Print df ===");
+        df.show(30);
+        df.printSchema(); 
 
+        // group by 
+        System.out.println("=== Print groupBy ===");
+        df.groupBy("date", "author_ip").agg(sum("push_amount"), sum("boo_amount")).show(30); 
     }
 }
 
