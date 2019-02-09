@@ -106,15 +106,8 @@ cd /usr/local/etc/kafka && kafka-server-start server.properties
 # zoopkeeper log file : dataDir=/Users/yennanliu/kafka_data/zookeeper   ( legacy :  /usr/local/var/lib/zookeeper ) 
 # kafka log file : log.dirs=/Users/yennanliu/kafka_data/kafka    ( legacy : usr/local/var/lib/kafka-logs) 
 
-
-
-
-
-
-
-
-
-
-
-
+# kill kafka server 
+ps -ef | grep kafka | grep -v grep | awk '{print $2}'
+# kill zookeeper  server 
+ps -ef | grep zookeeper | grep -v grep | awk '{print $2}'
 
