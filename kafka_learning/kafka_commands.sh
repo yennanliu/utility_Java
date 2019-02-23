@@ -6,6 +6,7 @@
 #################################################################
 
 
+############################  A) kafka basics  (utility_Java/kafka_learning/kafka_begineer_course/src/main/java/com/github/yen/kafka/tutorial1)
 # 1) kafka-topics: show all commands as list doc.   
 kafka-topics 
 
@@ -59,7 +60,16 @@ kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --proper
 # 16) show consumer with keys 
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
 
-# TODO  :  Section 7.45 : Java producer 
+
+
+############################  B) kafka Twitter   (utility_Java/kafka_learning/kafka_begineer_course/src/main/java/com/github/yen/kafka/tutorial2)
+# 1) create twitter topic  
+kafka-topics --zookeeper 127.0.0.1:2181 --create --topic twitter_tweets --partitions 6 --replication-factor 1 
+
+
+
+
+
 
 
 
