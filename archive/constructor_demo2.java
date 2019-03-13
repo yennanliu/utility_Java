@@ -1,5 +1,4 @@
 // Main.java
-
 import java.io.*;
 
 class Test {
@@ -9,8 +8,6 @@ class Test {
    byte bt;
    float ft;
 }
-
-
 
 class Test2 {
    int i;
@@ -22,10 +19,6 @@ class Test2 {
    String str2 = String.format(" hello wotld " );
 }
 
-
-
-
- 
 public class constructor_demo2 {
     public static void main(String args[]) {
       // cnstructors 1 
@@ -46,10 +39,3 @@ public class constructor_demo2 {
 
     }
 }
-
-
-
-
-
-
-
