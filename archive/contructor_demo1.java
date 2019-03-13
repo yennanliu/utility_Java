@@ -8,10 +8,8 @@ https://www.geeksforgeeks.org/constructors-in-java/
 
 */
 
-
-
 import java.io.*;
- 
+
 class Geek
 {
     int num;
@@ -24,7 +22,6 @@ class Geek
         System.out.println("Constructor called");
     }
 }
-
 
 class Geek2
 {
@@ -40,7 +37,6 @@ class Geek2
         this.id = id; 
     }
 }
-
 
 class Geek3
 {
@@ -59,8 +55,7 @@ class Geek3
                 " String and Integer : " + name + " "+ age);
         System.out.print(" "); 
  
-    }
- 
+    } 
     // Constructor with one argument but with different
     // type than previous..
     Geek3(long id)
@@ -70,7 +65,6 @@ class Geek3
     }
 }
 
- 
 class contructor_demo1
 {
     public static void main (String[] args)
@@ -109,19 +103,5 @@ class contructor_demo1
         // type 'Long'.
         Geek3 geek3_c = new Geek3(325614567);
 
-
-
-
-
-
-
     }
 }
-
-
-
-
-
-
-
-
