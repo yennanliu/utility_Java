@@ -8,7 +8,15 @@ import org.apache.spark.sql.SQLContext;
 
 import static org.apache.spark.sql.functions.*;
 
-public class Spark_query_mysql_demo {
+class Get_mysql_param { 
+
+  String set_mysql_url(){
+    // mysql_url = "jdbc:mysql://103.29.68.107:3306/PTTData?user=guest&password=123"; 
+    String mysql_url = System.getenv("mysql_url");
+    return mysql_url; }
+}
+
+public class Spark_query_ptt_mysql_demo {
 
     public static void main(String[] args) throws Exception {
 
@@ -23,12 +31,14 @@ public class Spark_query_mysql_demo {
         // connect to mysql 
         String sql = "(select * from Soft_Job LIMIT 1000) as test_table";
 
-        String url = "jdbc:mysql://103.29.68.107:3306/PTTData?user=guest&password=123";
-
+        Get_mysql_param mysql_connect_parameter = new Get_mysql_param();
+        String mysql_url = mysql_connect_parameter.set_mysql_url();
+        System.out.println("mysql_url : " + mysql_url);
+        
         Dataset <Row> df = sqlContext
                       .read()
                       .format("jdbc")
-                      .option("url", url)
+                      .option("url", mysql_url)
                       .option("dbtable", sql)
                       .load();
         // print df 
