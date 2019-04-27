@@ -3,7 +3,4 @@ FROM java:8
    WORKDIR /var/www/java
    RUN javac Sample.java
    RUN javac ForLoopExample.java
-   CMD ["java", "Sample"]
-   CMD ["java", "ForLoopExample"]
-
-
+   CMD ["java", "Sample", "java", "ForLoopExample"]
