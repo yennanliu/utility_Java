@@ -183,6 +183,8 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 	- https://www.udemy.com/apache-spark-course-with-java/
 
 
+### Java 6 hours tutorial
+- http://www.codedata.com.tw/java/java-tutorial-the-1st-class-1-jdk-versions-and-implementations/
 
 
 
