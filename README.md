@@ -48,7 +48,6 @@ $ java package_animals/MammalInt
 # Mammal travels
 ```
 
-
 ```bash
 # --- work with spark --- 
 #### set up mysql ####
@@ -83,8 +82,6 @@ mysql> select * from testData;
 mysql> 
 
 ```
-
-
 
 ```bash
 # --- work with spark  ML --- 
@@ -126,7 +123,6 @@ r2: 0.022861466913958184
 
 ```
 
-
 ### Quick Start (with Maven)
 
 ```bash
@@ -160,8 +156,6 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 # output 
 # fd5f56b40a79a385708428e7b32ab996a681080a166a2206e750eb4819186145
 
-
-
 ```
 
 ### Reference 
@@ -182,10 +176,9 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 - apache-spark-course-with-java
 	- https://www.udemy.com/apache-spark-course-with-java/
 
-
-### Java 6 hours tutorial
+### Java tutorial in 6 hours 
 - http://www.codedata.com.tw/java/java-tutorial-the-1st-class-1-jdk-versions-and-implementations/
-
+- https://github.com/codedata/JavaTutorial
 
 
 
