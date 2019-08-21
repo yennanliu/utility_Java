@@ -5,8 +5,12 @@
 #  KAFKA CLI COMMANDS   
 #################################################################
 
-
 ############################  A) kafka basics  (utility_Java/kafka_learning/kafka_begineer_course/src/main/java/com/github/yen/kafka/tutorial1)
+# launch zookeeper and kafka
+brew services start zookeeper
+brew services start kafka
+
+############################  B) kafka basics  (utility_Java/kafka_learning/kafka_begineer_course/src/main/java/com/github/yen/kafka/tutorial1)
 # 1) kafka-topics: show all commands as list doc.   
 kafka-topics 
 
@@ -61,17 +65,9 @@ kafka-console-producer --broker-list 127.0.0.1:9092 --topic first_topic --proper
 kafka-console-consumer --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning --property print.key=true --property key.separator=,
 
 
-
 ############################  B) kafka Twitter   (utility_Java/kafka_learning/kafka_begineer_course/src/main/java/com/github/yen/kafka/tutorial2)
 # 1) create twitter topic  
 kafka-topics --zookeeper 127.0.0.1:2181 --create --topic twitter_tweets --partitions 6 --replication-factor 1 
 
 # 2) launch a consumer 
 kafka-console-consumer   --bootstrap-server  127.0.0.1:9092 --topic twitter_tweets  
-
-
-
-
-
-
-
