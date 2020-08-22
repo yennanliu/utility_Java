@@ -2,13 +2,15 @@
 - //dev 
 - `learning Java from scratch`
 
-
 ### Main Files
 1. [Java Basic](https://github.com/yennanliu/utility_Java/tree/master/src/java/main/JavaBasics)
 	- [Constructor Overload](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ConstructorOverload.java) - overload Constructor for cases 
 	- [This metod](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ThisDemo.java) - `this` method examples in java
 	
-### Quick start
+### Quick start (lagacy)
+
+<details>
+<summary> Quick start (lagacy)</summary>
 
 ```bash
 # --- run the simplist app --- 
@@ -128,7 +130,7 @@ r2: 0.022861466913958184
 
 ```
 
-### Quick Start (with Maven)
+#### Quick Start (with Maven)
 
 ```bash
 # ref 
@@ -163,7 +165,12 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 
 ```
 
+</details>
+
 ### Reference 
+
+<details>
+<summary> Reference</summary>
 
 - http://www.runoob.com/sqlite/sqlite-java.html
 - https://github.com/OSE-Lab/learning-spark/tree/master/examples-java
@@ -171,10 +178,6 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 - https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
 - https://github.com/databricks/learning-spark/tree/master/src/main/java/com/oreilly/learningsparkexamples/java
 - https://github.com/endymecy/spark-ml-source-analysis
-
-### Packages
-
-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
 
 ### Spark Java Tutorial 
 - https://github.com/jleetutorial/sparkTutorial
@@ -185,5 +188,7 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 - http://www.codedata.com.tw/java/java-tutorial-the-1st-class-1-jdk-versions-and-implementations/
 - https://github.com/codedata/JavaTutorial
 
+### Packages
+- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
 
-
+</details>
