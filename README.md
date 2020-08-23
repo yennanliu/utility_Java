@@ -9,6 +9,7 @@
 	- [Staic Var](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/StaicVar.java) - `Staic var` examples in java
 	- [Staic method](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/StaicMethod.java) - `Staic Method` examples in java
 	- [Extends method](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/Extends.java) - `extends class` examples in java
+	- [ReWrite method](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ReWrite.java) - `ReWrite method` examples in java
 
 ### Quick start (lagacy)
 
