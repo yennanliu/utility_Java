@@ -1,4 +1,4 @@
-// super case 2 : use super call "father class" construct method
+// Super case 2 : use super call "father class" construct method
 // => 
 // 1. super([arg1, arg2, ...])
 
@@ -30,7 +30,7 @@ class Animal2{
 }
 
 // Cat extends from Animal
-class Cat extends Animal{
+class Cat extends Animal2{
     public Cat(){
         // call the "father class" (Animal2) WITH ARG method 
         super("Persian cat");

@@ -1,4 +1,4 @@
-// super case 1 : use super call "father class" var, method
+// Super case 1 : use super call "father class" var, method
 // => 
 // 1. super.var 
 // 2. super.methdo(arg1, arg2...)
