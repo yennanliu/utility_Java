@@ -9,7 +9,7 @@ class Dog extends Animal{
     // rewrite from shout
     // -> need to have
     // -> 1. same method name
-    // -> 2.same arg (var)
+    // -> 2. same arg (var)
     // -> 3. same return type
     void shout(){
         System.out.println("whof whof .....");
