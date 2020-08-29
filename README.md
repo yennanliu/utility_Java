@@ -12,6 +12,8 @@
 	- [ReWrite method](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ReWrite.java) - `ReWrite method` examples in java
 	- [Super 1](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/Super_1.java), [Super 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/Super_2.java) - `Super method` examples in java
 	- [abstract](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/abstractDemo.java) - `abstract method` examples in java
+	- [interface](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo.java) - `interface method` examples in java
+
 
 ### Quick start (lagacy)
 
