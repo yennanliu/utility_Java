@@ -19,6 +19,7 @@
 	- [interface](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo.java), [interface 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo2.java) - `interface method` examples in java
 	- [Runtime](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/CheckRuntime.java) - Runtime is JVM running status, can check JVM/process status via it
 	- [CheckSystem](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/CheckSystem.java) - check JVM/system properties
+	- [StringBufferDemo](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/StringBufferDemo.java) - StringBuffer op demo
 
 ### Build
 
