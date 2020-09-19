@@ -66,8 +66,8 @@ mvn archetype:generate -DgroupId=com.yen.JavaBasics -DartifactId=utility-java -D
 - https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
 
 ### Maven
-	- https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
-	- https://maven.apache.org/guides/getting-started/
+- https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+- https://maven.apache.org/guides/getting-started/
 
 </details>
 
