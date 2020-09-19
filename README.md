@@ -1,6 +1,10 @@
 # [utility_Java](https://github.com/yennanliu/utility_Java/tree/master/src/java/main/JavaBasics)
 - `learning Java from scratch`
 - Java basics collections
+- env
+	- Java JDK 1.8
+	- maven
+	- IntelliJ
 
 ### Main Files
 1. [Java Basic](https://github.com/yennanliu/utility_Java/tree/master/src/java/main/JavaBasics)
@@ -15,6 +19,58 @@
 	- [interface](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo.java), [interface 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo2.java) - `interface method` examples in java
 	- [Runtime](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/CheckRuntime.java) - Runtime is JVM running status, can check JVM/process status via it
 	- [CheckSystem](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/CheckSystem.java) - check JVM/system properties
+
+### Build
+
+<details>
+<summary>Build</summary>
+
+- dev
+
+</details>
+
+
+### Development
+
+<details>
+<summary>Development</summary>
+
+#### Create the Project
+```bash
+mvn archetype:generate -DgroupId=com.yen.JavaBasics -DartifactId=utility-java -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+```
+</details>
+
+### Reference 
+
+<details>
+<summary>Reference</summary>
+
+- http://www.runoob.com/sqlite/sqlite-java.html
+- https://github.com/OSE-Lab/learning-spark/tree/master/examples-java
+- https://stackoverflow.com/questions/22252534/how-to-run-a-spark-java-program-from-command-line
+- https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
+- https://github.com/databricks/learning-spark/tree/master/src/main/java/com/oreilly/learningsparkexamples/java
+- https://github.com/endymecy/spark-ml-source-analysis
+
+### Spark Java Tutorial 
+- https://github.com/jleetutorial/sparkTutorial
+- apache-spark-course-with-java
+	- https://www.udemy.com/apache-spark-course-with-java/
+
+### Java tutorial in 6 hours 
+- http://www.codedata.com.tw/java/java-tutorial-the-1st-class-1-jdk-versions-and-implementations/
+- https://github.com/codedata/JavaTutorial
+
+### Packages
+- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
+
+### Maven
+	- https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+	- https://maven.apache.org/guides/getting-started/
+
+</details>
+
 
 ### Quick start (lagacy)
 
@@ -173,40 +229,5 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 # fd5f56b40a79a385708428e7b32ab996a681080a166a2206e750eb4819186145
 
 ```
-
-</details>
-
-#### Build
-
-<details>
-<summary>Build</summary>
-
-- dev
-
-</details>
-
-### Reference 
-
-<details>
-<summary>Reference</summary>
-
-- http://www.runoob.com/sqlite/sqlite-java.html
-- https://github.com/OSE-Lab/learning-spark/tree/master/examples-java
-- https://stackoverflow.com/questions/22252534/how-to-run-a-spark-java-program-from-command-line
-- https://stackoverflow.com/questions/23308493/how-to-download-mysql-jdbc-jar-file-on-centos
-- https://github.com/databricks/learning-spark/tree/master/src/main/java/com/oreilly/learningsparkexamples/java
-- https://github.com/endymecy/spark-ml-source-analysis
-
-### Spark Java Tutorial 
-- https://github.com/jleetutorial/sparkTutorial
-- apache-spark-course-with-java
-	- https://www.udemy.com/apache-spark-course-with-java/
-
-### Java tutorial in 6 hours 
-- http://www.codedata.com.tw/java/java-tutorial-the-1st-class-1-jdk-versions-and-implementations/
-- https://github.com/codedata/JavaTutorial
-
-### Packages
-- https://mvnrepository.com/artifact/org.apache.spark/spark-core_2.11/2.3.0
 
 </details>
