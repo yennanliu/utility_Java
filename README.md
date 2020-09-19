@@ -1,6 +1,6 @@
-# utility_Java
-- //dev 
+# [utility_Java](https://github.com/yennanliu/utility_Java/tree/master/src/java/main/JavaBasics)
 - `learning Java from scratch`
+- Java basics collections
 
 ### Main Files
 1. [Java Basic](https://github.com/yennanliu/utility_Java/tree/master/src/java/main/JavaBasics)
@@ -13,6 +13,7 @@
 	- [Super 1](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/Super_1.java), [Super 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/Super_2.java) - `Super method` examples in java
 	- [abstract](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/abstractDemo.java) - `abstract method` examples in java
 	- [interface](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo.java), [interface 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/interfaceDemo2.java) - `interface method` examples in java
+	- [Runtime](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/CheckRuntime.java) - Runtime is JVM running status, can check JVM/process status via it
 
 
 ### Quick start (lagacy)
