@@ -19,7 +19,7 @@
 ### Quick start (lagacy)
 
 <details>
-<summary> Quick start (lagacy)</summary>
+<summary>Quick start (lagacy)</summary>
 
 ```bash
 # --- run the simplist app --- 
@@ -176,10 +176,19 @@ $ java -jar target/maven-first-java-project-1.0-SNAPSHOT.jar 99999
 
 </details>
 
+#### Build
+
+<details>
+<summary>Build</summary>
+
+- dev
+
+</details>
+
 ### Reference 
 
 <details>
-<summary> Reference</summary>
+<summary>Reference</summary>
 
 - http://www.runoob.com/sqlite/sqlite-java.html
 - https://github.com/OSE-Lab/learning-spark/tree/master/examples-java
