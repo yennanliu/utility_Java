@@ -21,7 +21,7 @@
 	- [CheckSystem](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/CheckSystem.java) - check JVM/system properties
 	- [StringBufferDemo](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/StringBufferDemo.java) - StringBuffer op demo
 	- [Java IO 1](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_1.java), [Java IO 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_2.java), [Java IO 3](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_3.java)- Java IO demo (via binary/string stream..)
-	- [Java Copy File](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaCopyFile_1.java) -Java Copy File examples
+	- [Java Copy File 1](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaCopyFile_1.java), [Java Copy File with bufffer 1](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaCopyFileBuffer_1.java), [Java Copy File with bufffer 2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaCopyFileBuffer_2.java) -Java Copy File examples
 
 ### Build
 
