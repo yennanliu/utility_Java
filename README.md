@@ -25,6 +25,7 @@
 	-  [Java IO 4](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_4.java), [Java IO 5](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_5.java), [Java IO 6](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_6.java), [Java IO 7](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/JavaIO_7.java) - Java IO demo (FileReader, FileWriter)
 	- [DeleteDirectoryFiles](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/DeleteDirectoryFiles.java) - Example delete file/directory in java
 	- [ListDirectoryFiles](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ListDirectoryFiles.java), [ListDirectoryFiles2](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ListDirectoryFiles2.java), [ListDirectoryFiles3](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ListDirectoryFiles3.java) - Example list file/directory in java
+	- [ParallelStream](https://github.com/yennanliu/utility_Java/blob/master/src/java/main/JavaBasics/ParallelStream.java) - Parallel Stream example in java
 
 ### Build
 
