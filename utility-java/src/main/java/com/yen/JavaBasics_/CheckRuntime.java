@@ -1,3 +1,5 @@
+package com.yen.JavaBasics_;
+
 public class CheckRuntime{
     public static void main(String[] args){
         System.out.println("running CheckRuntime ...");
